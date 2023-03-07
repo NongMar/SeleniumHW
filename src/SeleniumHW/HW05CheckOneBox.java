@@ -1,26 +1,21 @@
+package SeleniumHW;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.util.List;
-
-
-public class tagName {
+public class HW05CheckOneBox {
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver","drivers/chromedriver");
-
         WebDriver driver=new ChromeDriver();
+        driver.get("http://practice.syntaxtechs.net/basic-checkbox-demo.php");
+        WebElement checkBtn= driver.findElement(By.xpath("//input[@id='isAgeSelected']"));
+       boolean isSelected= checkBtn.isSelected();
 
-        driver.manage().window().maximize();
-        driver.get("https://www.amazon.com/");
-
-        List<WebElement> tags=driver.findElements(By.tagName("a"));
-
-        for(WebElement tag:tags){
-          String link  =tag.getAttribute("href");
-            System.out.println(link);
+        if(!isSelected){
+            checkBtn.click();
         }
-
     }
+    //
 }

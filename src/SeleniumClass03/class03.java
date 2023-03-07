@@ -1,3 +1,5 @@
+package SeleniumClass03;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
